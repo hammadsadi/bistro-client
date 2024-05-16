@@ -3,6 +3,7 @@ import Banner from "../Banner";
 import Category from "../Category/Category";
 import ChefRecommends from "../ChefRecommends/ChefRecommends";
 import ContactBanner from "../ContactBanner/ContactBanner";
+import Features from "../Features/Features";
 import PopularMenu from "../PopularMenu/PopularMenu";
 
 const Home = () => {
@@ -20,11 +21,14 @@ const Home = () => {
       />
       {/* Popular Menu */}
       <PopularMenu />
+      {/* Contact Banner */}
+      <ContactBanner />
+
       {/* Chef Recommends */}
       <ChefRecommends />
 
-      {/* Contact Banner */}
-      <ContactBanner />
+      {/* Features Section */}
+      <Features />
     </div>
   );
 };
