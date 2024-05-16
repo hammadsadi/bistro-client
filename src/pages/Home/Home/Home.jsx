@@ -2,6 +2,7 @@ import MiniBanner from "../../Shared/MiniBanner/MiniBanner";
 import Banner from "../Banner";
 import Category from "../Category/Category";
 import ChefRecommends from "../ChefRecommends/ChefRecommends";
+import ContactBanner from "../ContactBanner/ContactBanner";
 import PopularMenu from "../PopularMenu/PopularMenu";
 
 const Home = () => {
@@ -21,6 +22,9 @@ const Home = () => {
       <PopularMenu />
       {/* Chef Recommends */}
       <ChefRecommends />
+
+      {/* Contact Banner */}
+      <ContactBanner />
     </div>
   );
 };
