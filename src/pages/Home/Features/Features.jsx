@@ -2,7 +2,7 @@ import featuresImg from "../../../assets/home/featured.jpg";
 import "./Features.css";
 const Features = () => {
   return (
-    <section id="features-item">
+    <section className="bg-fixed features-item">
       <div className="container md:px-0 px-2 mx-auto py-12 md:py-24 -z-50 text-white">
         <div className="text-center max-w-sm mx-auto mb-6 md:mb-11">
           <h5 className=" text-lg md:text-xl italic text-color-primary font-normal pb-2 md:pb-3 capitalize">

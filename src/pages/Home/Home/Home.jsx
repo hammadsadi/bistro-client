@@ -5,6 +5,7 @@ import ChefRecommends from "../ChefRecommends/ChefRecommends";
 import ContactBanner from "../ContactBanner/ContactBanner";
 import Features from "../Features/Features";
 import PopularMenu from "../PopularMenu/PopularMenu";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -29,6 +30,8 @@ const Home = () => {
 
       {/* Features Section */}
       <Features />
+      {/* Testimonial */}
+      <Testimonial />
     </div>
   );
 };
