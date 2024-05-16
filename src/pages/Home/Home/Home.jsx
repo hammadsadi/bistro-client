@@ -1,6 +1,7 @@
 import MiniBanner from "../../Shared/MiniBanner/MiniBanner";
 import Banner from "../Banner";
 import Category from "../Category/Category";
+import ChefRecommends from "../ChefRecommends/ChefRecommends";
 import PopularMenu from "../PopularMenu/PopularMenu";
 
 const Home = () => {
@@ -18,6 +19,8 @@ const Home = () => {
       />
       {/* Popular Menu */}
       <PopularMenu />
+      {/* Chef Recommends */}
+      <ChefRecommends />
     </div>
   );
 };
