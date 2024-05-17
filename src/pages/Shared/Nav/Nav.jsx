@@ -62,10 +62,10 @@ const Nav = () => {
             </ul>
           </div>
           <Link>
-            <h2 className="font-cinzel md:text-xl lg:text-3xl font-black">
+            <h2 className="font-cinzel text-sm md:text-xl lg:text-3xl font-black">
               BISTRO BOSS
             </h2>
-            <span className="font-cinzel md:text-lg lg:text-2xl font-bold">
+            <span className="font-cinzel md:text-lg lg:text-2xl font-bold hidden md:flex">
               Restaurant
             </span>
           </Link>
@@ -75,11 +75,13 @@ const Nav = () => {
         </div>
         <div className="navbar-end space-x-5">
           <div>
-            <FaCartShopping className="text-xl" />
+            <FaCartShopping className="text-base md:text-xl" />
           </div>
           <div className="flex items-center gap-3">
-            <button className="font-bold text-lg uppercase">Logout</button>
-            <FaRegUserCircle className="text-2xl" />
+            <button className="font-bold text-sm lg:text-lg uppercase">
+              Logout
+            </button>
+            <FaRegUserCircle className="text-base md:text-2xl" />
           </div>
         </div>
       </div>
