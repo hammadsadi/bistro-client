@@ -1,6 +1,6 @@
 import bn1 from "../../../assets/menu/banner3.jpg";
 import PageCover from "../../Shared/PageCover/PageCover";
-import TodaysOffer from "../TodaysOffer/TodaysOffer";
+import MenuContent from "../MenuContent/MenuContent";
 const OurMenu = () => {
   return (
     <div>
@@ -12,7 +12,7 @@ const OurMenu = () => {
         disc={"Would you like to try a dish?"}
       />
       {/* Todays Offer */}
-      <TodaysOffer />
+      <MenuContent />
     </div>
   );
 };

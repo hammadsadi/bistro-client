@@ -1,19 +1,14 @@
-import { useEffect, useState } from "react";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import PopularMenuItem from "../../Shared/PopularMenuItem/PopularMenuItem";
+import useGetMenu from "../../../hooks/useGetMenu";
 
 const PopularMenu = () => {
-  const [popularMenu, setPopularMenu] = useState([]);
+  // const [popularMenu, setPopularMenu] = useState([]);
+  const [menu] = useGetMenu();
+  const popularMenu = menu.filter((menu) => menu.category === "popular");
 
   // Load Menu
-  useEffect(() => {
-    fetch("menu.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const popularItem = data.filter((menu) => menu.category === "popular");
-        setPopularMenu(popularItem);
-      });
-  }, []);
+
   return (
     <div>
       <section>
