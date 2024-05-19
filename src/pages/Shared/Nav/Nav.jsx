@@ -1,8 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaRegUserCircle } from "react-icons/fa";
+import useGetAuth from "../../../hooks/useGetAuth";
+import Swal from "sweetalert2";
 
 const Nav = () => {
+  const { user, userLogout } = useGetAuth();
+  const handleLogout = () => {
+    userLogout()
+      .then(() => {
+        Swal.fire("Logout Successful");
+      })
+      .catch();
+  };
   const navInfo = (
     <>
       <li>
@@ -27,8 +37,13 @@ const Nav = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/our-shop" className="font-bold text-lg uppercase">
+        <NavLink to="/our-shop/salad" className="font-bold text-lg uppercase">
           our shop
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/secret" className="font-bold text-lg uppercase">
+          Secret
         </NavLink>
       </li>
     </>
@@ -78,10 +93,28 @@ const Nav = () => {
             <FaCartShopping className="text-base md:text-xl" />
           </div>
           <div className="flex items-center gap-3">
-            <button className="font-bold text-sm lg:text-lg uppercase">
-              Logout
-            </button>
-            <FaRegUserCircle className="text-base md:text-2xl" />
+            {user ? (
+              <>
+                <button
+                  className="font-bold text-sm lg:text-lg uppercase"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+                <h2>{user?.displayName}</h2>
+              </>
+            ) : (
+              <Link to="/login">
+                <button className="font-bold text-sm lg:text-lg uppercase">
+                  Login
+                </button>
+              </Link>
+            )}
+            {user?.photoURL ? (
+              <img src={user?.photoURL} alt="" className="w-6 rounded-full" />
+            ) : (
+              <FaRegUserCircle className="text-base md:text-2xl" />
+            )}
           </div>
         </div>
       </div>

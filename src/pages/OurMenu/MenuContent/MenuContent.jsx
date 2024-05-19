@@ -37,7 +37,10 @@ const TodaysOffer = () => {
               <PopularMenuItem key={item._id} item={item} />
             ))}
           </div>
-          <MenuBtn btnTitle={" ORDER YOUR FAVOURITE FOOD"} />
+          <MenuBtn
+            btnTitle={" ORDER YOUR FAVOURITE FOOD"}
+            btnLink={"/our-shop/offered"}
+          />
         </div>
       </section>
       {/* More Product */}
@@ -60,7 +63,10 @@ const TodaysOffer = () => {
               <PopularMenuItem key={item._id} item={item} />
             ))}
           </div>
-          <MenuBtn btnTitle={" ORDER YOUR FAVOURITE FOOD"} />
+          <MenuBtn
+            btnTitle={" ORDER YOUR FAVOURITE FOOD"}
+            btnLink={"/our-shop/dessert"}
+          />
         </div>
       </div>
       {/* More Product PIZZA*/}
@@ -83,7 +89,10 @@ const TodaysOffer = () => {
               <PopularMenuItem key={item._id} item={item} />
             ))}
           </div>
-          <MenuBtn btnTitle={" ORDER YOUR FAVOURITE FOOD"} />
+          <MenuBtn
+            btnTitle={" ORDER YOUR FAVOURITE FOOD"}
+            btnLink={"/our-shop/pizza"}
+          />
         </div>
       </div>
       {/* More Product SALADS*/}
@@ -106,7 +115,10 @@ const TodaysOffer = () => {
               <PopularMenuItem key={item._id} item={item} />
             ))}
           </div>
-          <MenuBtn btnTitle={" ORDER YOUR FAVOURITE FOOD"} />
+          <MenuBtn
+            btnTitle={" ORDER YOUR FAVOURITE FOOD"}
+            btnLink={"/our-shop/salad"}
+          />
         </div>
       </div>
       {/* More Product SOUPS*/}
@@ -129,7 +141,10 @@ const TodaysOffer = () => {
               <PopularMenuItem key={item._id} item={item} />
             ))}
           </div>
-          <MenuBtn btnTitle={" ORDER YOUR FAVOURITE FOOD"} />
+          <MenuBtn
+            btnTitle={" ORDER YOUR FAVOURITE FOOD"}
+            btnLink={"/our-shop/soup"}
+          />
         </div>
       </div>
     </div>
