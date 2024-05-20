@@ -7,6 +7,9 @@ import Login from "../pages/Auth/Login";
 import SignUp from "../pages/Auth/SignUp";
 import Scret from "../pages/Scret/Scret";
 import PrivateRoutes from "./PrivateRoutes";
+import DashBoard from "../Layouts/DashBoard/DashBoard";
+import UserHome from "../pages/Dashboard/UserHome/UserHome";
+import Cart from "../pages/Dashboard/Cart/Cart";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,6 +42,20 @@ const router = createBrowserRouter([
             <Scret />
           </PrivateRoutes>
         ),
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <DashBoard />,
+    children: [
+      {
+        path: "user-home",
+        element: <UserHome />,
+      },
+      {
+        path: "shop-cart",
+        element: <Cart />,
       },
     ],
   },

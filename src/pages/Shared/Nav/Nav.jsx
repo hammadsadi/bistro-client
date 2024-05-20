@@ -3,8 +3,11 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FaRegUserCircle } from "react-icons/fa";
 import useGetAuth from "../../../hooks/useGetAuth";
 import Swal from "sweetalert2";
+import useCart from "../../../hooks/useCart";
 
 const Nav = () => {
+  const [cart] = useCart();
+  console.log(cart);
   const { user, userLogout } = useGetAuth();
   const handleLogout = () => {
     userLogout()
@@ -90,7 +93,10 @@ const Nav = () => {
         </div>
         <div className="navbar-end space-x-5">
           <div>
-            <FaCartShopping className="text-base md:text-xl" />
+            <Link to="/dashboard/shop-cart" className="btn">
+              <FaCartShopping className="text-base md:text-xl" />
+              <div className="badge badge-secondary">+{cart.length}</div>
+            </Link>
           </div>
           <div className="flex items-center gap-3">
             {user ? (
@@ -101,7 +107,7 @@ const Nav = () => {
                 >
                   Logout
                 </button>
-                <h2>{user?.displayName}</h2>
+                {/* <h2>{user?.displayName}</h2> */}
               </>
             ) : (
               <Link to="/login">
