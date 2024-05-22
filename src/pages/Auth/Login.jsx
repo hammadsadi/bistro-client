@@ -9,12 +9,12 @@ import {
 } from "react-simple-captcha";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useGetAuth from "../../hooks/useGetAuth";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 const Login = () => {
   const { loginUser } = useGetAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state?.from || "/";
-  console.log(from);
   const {
     register,
     handleSubmit,
@@ -144,6 +144,9 @@ const Login = () => {
               </p>
             </div>
           </form>
+          <div className="mx-auto">
+            <SocialLogin />
+          </div>
         </div>
       </div>
     </div>

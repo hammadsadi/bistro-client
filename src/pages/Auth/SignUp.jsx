@@ -2,6 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import loginBn from "../../assets/others/authentication2.png";
 import { useForm } from "react-hook-form";
 import useGetAuth from "../../hooks/useGetAuth";
+import { axiosCommon } from "../../hooks/useAxiosCommon";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 const SignUp = () => {
   const { createUser, updateUserInfo } = useGetAuth();
   const navigate = useNavigate();
@@ -14,6 +16,12 @@ const SignUp = () => {
   const handleSubmitForm = (data) => {
     createUser(data.email, data.password)
       .then((result) => {
+        const userData = {
+          name: data.name,
+          email: data.email,
+        };
+        // Create User
+        axiosCommon.post("/user", userData).then((res) => {});
         updateUserInfo(data.name, data.photoUrl)
           .then(() => {
             navigate("/");
@@ -24,6 +32,7 @@ const SignUp = () => {
         console.log(err.message);
       });
   };
+
   return (
     <div>
       <div className="flex md:flex-row flex-col justify-center items-center h-screen">
@@ -154,6 +163,9 @@ const SignUp = () => {
                 </p>
               </div>
             </form>
+            <div className="mx-auto">
+              <SocialLogin />
+            </div>
           </div>
         </div>
       </div>
